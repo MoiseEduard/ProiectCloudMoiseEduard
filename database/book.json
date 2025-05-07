@@ -1,0 +1,14 @@
+[
+    {
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "genre": "Programming",
+      "publishedYear": 2008
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "genre": "Self-help",
+      "publishedYear": 2018
+    }
+  ]
