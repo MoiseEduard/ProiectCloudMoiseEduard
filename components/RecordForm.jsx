@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import "@/styles/globals.css";
 
 const RecordForm = (props) => {
   const { data, onSubmit } = props;

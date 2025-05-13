@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { deleteRecord, getRecords } from "@/utils/recordsFunctions";
-import "@/styles/globals.css";
 
 const Books = () => {
   const router = useRouter();
