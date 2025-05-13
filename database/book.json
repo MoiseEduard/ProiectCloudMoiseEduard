@@ -1,14 +1,122 @@
 [
-    {
-      "title": "Clean Code",
-      "author": "Robert C. Martin",
-      "genre": "Programming",
-      "publishedYear": 2008
-    },
-    {
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "genre": "Self-help",
-      "publishedYear": 2018
-    }
-  ]
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "genre": "Programming",
+    "publishedYear": 2008,
+    "price": 45,
+    "currency": "RON"
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-help",
+    "publishedYear": 2018,
+    "price": 40,
+    "currency": "RON"
+  },
+  {
+    "title": "Moromeții",
+    "author": "Marin Preda",
+    "genre": "Fiction",
+    "publishedYear": 1955,
+    "price": 38,
+    "currency": "RON"
+  },
+  {
+    "title": "Enigma Otiliei",
+    "author": "George Călinescu",
+    "genre": "Fiction",
+    "publishedYear": 1938,
+    "price": 36,
+    "currency": "RON"
+  },
+  {
+    "title": "Baltagul",
+    "author": "Mihail Sadoveanu",
+    "genre": "Mystery",
+    "publishedYear": 1930,
+    "price": 33,
+    "currency": "RON"
+  },
+  {
+    "title": "Ion",
+    "author": "Liviu Rebreanu",
+    "genre": "Fiction",
+    "publishedYear": 1920,
+    "price": 39,
+    "currency": "RON"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "publishedYear": 1960,
+    "price": 42,
+    "currency": "RON"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "publishedYear": 1949,
+    "price": 41,
+    "currency": "RON"
+  },
+  {
+    "title": "Mândrie și prejudecată",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "publishedYear": 1813,
+    "price": 34,
+    "currency": "RON"
+  },
+  {
+    "title": "Harry Potter și Piatra Filozofală",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "publishedYear": 1997,
+    "price": 44,
+    "currency": "RON"
+  },
+  {
+    "title": "Pădurea spânzuraților",
+    "author": "Liviu Rebreanu",
+    "genre": "Historical",
+    "publishedYear": 1922,
+    "price": 36,
+    "currency": "RON"
+  },
+  {
+    "title": "Crimă și pedeapsă",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Philosophical",
+    "publishedYear": 1866,
+    "price": 43,
+    "currency": "RON"
+  },
+  {
+    "title": "Despre frumusețea uitată a vieții",
+    "author": "Andrei Pleșu",
+    "genre": "Philosophy",
+    "publishedYear": 2006,
+    "price": 37,
+    "currency": "RON"
+  },
+  {
+    "title": "Arta subtilă a nepăsării",
+    "author": "Mark Manson",
+    "genre": "Self-help",
+    "publishedYear": 2016,
+    "price": 40,
+    "currency": "RON"
+  },
+  {
+    "title": "Cel mai iubit dintre pământeni",
+    "author": "Marin Preda",
+    "genre": "Fiction",
+    "publishedYear": 1980,
+    "price": 42,
+    "currency": "RON"
+  }
+]
