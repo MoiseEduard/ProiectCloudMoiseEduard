@@ -1,4 +1,4 @@
-// utils/functions.js
+
 
 import {connectToDatabase,} from '@/lib/mongodb.js';
 

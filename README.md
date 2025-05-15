@@ -1,40 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+1. Introducere
+   Acest proiect constă într-o aplicație web realizată cu framework-ul Next.js, ce permite utilizatorilor să exploreze o colecție de cărți românești și internaționale. Utilizatorul are posibilitatea de a adăuga o carte, de a vizualiza toate carțile din baza de date, dar și de a șterge sau edita înregistrările curente. Aplicația afișează și informații meteo folosind un API extern, pentru a demonstra integrarea cu servicii cloud, alături de celalalt serviciu cloud utilizat, MongoDB Atlas. Aplicația este găzduită pe platforma Vercel.
 
-## Getting Started
+2. Descriere problemă
+   Utilizatorii au nevoie de o platformă online unde pot să-și creeze și să țina evidența propriilor cărți din diverse genuri, într-un mediu intuitiv și prietenos. În plus, aplicația oferă și informații meteo în timp real pentru orașul selectat, pentru a adăuga un element interactiv și util. Această funcționalitate este realizată prin integrarea cu un API cloud, respectând cerințele proiectului privind utilizarea serviciilor cloud.
 
-First, run the development server:
+3. Descriere API
+   3.1 OpenWeatherMap API – un serviciu care oferă date meteo actualizate global.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Autentificare:
+Cheia API este transmisă ca parametru appid. Pentru securitate, cheia este stocată în variabila de mediu OPENWEATHER_API_KEY și nu este expusă în frontend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Exemplu Request:
+GET http://localhost:3000/api/weather?city=Bucharest – va returna vremea din București.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3.2 MongoDB Atlas – o bază de date NoSQL cloud, utilizată pentru stocarea și gestionarea colecției de cărți a utilizatorilor.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Aplicația comunică cu MongoDB Atlas prin API-uri REST personalizate implementate în backend. Datele despre cărți sunt stocate în colecții MongoDB, iar operațiile CRUD (creare, citire, actualizare, ștergere) sunt realizate prin aceste API-uri.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Conexiunea către MongoDB Atlas este securizată printr-un URI de conectare ce conține autentificarea, stocat în variabila de mediu NEXT_ATLAS_URI, evitând expunerea informațiilor sensibile.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Exemplu Request:
+GET http://localhost:3000/api/records – va returna toate cartile din baza de date.
 
-## Learn More
+Metode HTTP utilizate
+GET — pentru citirea datelor (ex: lista de cărți)
 
-To learn more about Next.js, take a look at the following resources:
+POST — pentru crearea unei noi înregistrări (ex: adăugarea unei cărți)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+PUT — pentru actualizarea unei înregistrări existente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+DELETE — pentru ștergerea unei cărți
 
-## Deploy on Vercel
+4. Flux de date
+   Utilizatorul accesează pagina principală a aplicației.
+   Componenta React face un request către endpoint-ul intern /api/weather cu orașul dorit (implicit "Bucharest").
+   Endpoint-ul API din Next.js face un request extern către OpenWeatherMap API, folosind cheia secretă stocată în variabilele de mediu.
+   Răspunsul meteo este prelucrat și trimis înapoi către client.
+   Componenta React afișează datele meteo în interfață.
+   Pagina principală conține un mesaj adresat utilizatorului, alături de butonul Get Started, care prin apăsarea lui va trimite utilizatorul pe pagina de meniu. Acolo utilizatorul are 3 opțiuni: să creeze o nouă înregistrare, implicit să adauge o nouă carte în colecția sa, poate să vizualizeze întreaga sa colecție unde, de asemenea, are posibilitatea de a edita sau șterge înregistrări, dar are și posibilitatea de a reveni de fiecare dată la pagina de dinainte.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Referințe
+   OpenWeatherMap API Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Next.js API Routes
+
+Next.js Environment Variables
+
+Vercel Documentation
